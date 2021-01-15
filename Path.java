@@ -1,18 +1,18 @@
-private class Path {
+public class Path {
 
     int pos;
     int totalCost;
     int lastVisited;
-    bool[] visited;
+    boolean[] visited;
 
-    public Path(int[] visited, int pos) {
+    public Path(boolean[] visited, int pos) {
         this.visited = visited;
         this.pos = pos;
         totalCost = 0;
     }
 
     public Path(int len) {
-        this(new int[len], 0);
+        this(new boolean[len], 0);
     }
 
     public int getCost() {
@@ -28,7 +28,7 @@ private class Path {
     }
 
     public Path clone() {
-        int[] visitedCopy = new int[visited.length];
+        boolean[] visitedCopy = new boolean[visited.length];
         for(int i = 0; i < visited.length; ++i) {
             visitedCopy[i] = visited[i];
         }
