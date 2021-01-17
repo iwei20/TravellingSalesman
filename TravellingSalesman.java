@@ -36,7 +36,6 @@ public class TravellingSalesman {
 
             }
         }
-        for(int i = 0; i < soln.size(); ++i) soln.set(i, soln.get(i) + 1);
         System.out.println(soln);
         return min;
     }
