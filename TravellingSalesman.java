@@ -16,7 +16,7 @@ public class TravellingSalesman {
             // From that starting position, continue through all paths until we have 
             while(perms.size() > 0) {
                 // Consider an arbitrary path
-                Path first = perms.remove(0);
+                Path first = perms.remove(perms.size() - 1);
 
                 if(first.finished()) {
                     // A complete path can be measured against the minimum path
@@ -48,11 +48,13 @@ public class TravellingSalesman {
                 cityNames.add(s[0]);
             }
 
-            if(!cityNames.contains(s[1])) {
-                cityNames.add(s[1]);
+            if(!cityNames.contains(s[2])) {
+                cityNames.add(s[2]);
             }
         }
         cin.close();
+        cin = new Scanner(System.in);
+
     }
 
     
