@@ -4,7 +4,7 @@ public class TravellingSalesman {
 
     public static int solve(int[][] adj) {
         int min = Integer.MAX_VALUE;
-        ArrayList<Integer> soln = new ArrayList<Integer>();
+        // ArrayList<Integer> soln = new ArrayList<Integer>();
         // Consider every possible starting position
         for(int i = 0; i < adj.length; ++i) {
             ArrayList<Path> perms = new ArrayList<Path>();
@@ -22,7 +22,7 @@ public class TravellingSalesman {
                     // A complete path can be measured against the minimum path
                     if(first.getCost() < min) {
                         min = first.getCost();
-                        soln = first.fullPath();
+                        // soln = first.fullPath();
                     }
                     
                 } else {
@@ -36,7 +36,7 @@ public class TravellingSalesman {
 
             }
         }
-        System.out.println(soln);
+        // System.out.println(soln);
         return min;
     }
 
