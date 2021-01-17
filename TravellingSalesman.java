@@ -4,9 +4,9 @@ public class TravellingSalesman {
 
     public static int solve(int[][] adj) {
         int min = Integer.MAX_VALUE;
+        ArrayList<Integer> soln = new ArrayList<Integer>();
         // Consider every possible starting position
         for(int i = 0; i < adj.length; ++i) {
-            // We are not allowed to use queues because we haven't learned them
             ArrayList<Path> perms = new ArrayList<Path>();
 
             // First create a path
@@ -20,7 +20,11 @@ public class TravellingSalesman {
 
                 if(first.finished()) {
                     // A complete path can be measured against the minimum path
-                    min = Math.min(first.getCost(), min);
+                    if(first.getCost() < min) {
+                        min = first.getCost();
+                        soln = first.fullPath();
+                    }
+                    
                 } else {
                     // Otherwise, append all other connected cities that have not been previously visited
                     for(int j = 0; j < adj.length; ++j) {
@@ -32,16 +36,19 @@ public class TravellingSalesman {
 
             }
         }
+        for(int i = 0; i < soln.size(); ++i) soln.set(i, soln.get(i) + 1);
+        System.out.println(soln);
         return min;
     }
 
     public static void main(String[] args) {
         Scanner cin = new Scanner(System.in);
+        ArrayList<String> lines = new ArrayList<String>();
         ArrayList<String> cityNames = new ArrayList<String>();
 
-        // TODO: finish parsing
         while(cin.hasNextLine()) {
             String line = cin.nextLine();
+            lines.add(line);
             String[] s = line.split(" ");
 
             if(!cityNames.contains(s[0])) {
@@ -52,9 +59,17 @@ public class TravellingSalesman {
                 cityNames.add(s[2]);
             }
         }
-        cin.close();
-        cin = new Scanner(System.in);
 
+        int[][] adj = new int[cityNames.size()][cityNames.size()];
+        for(int i = 0; i < lines.size(); ++i) {
+            String[] s = lines.get(i).split(" ");
+            int first = cityNames.indexOf(s[0]);
+            int second = cityNames.indexOf(s[2]);
+            int dist = Integer.parseInt(s[4]); 
+            adj[first][second] = adj[second][first] = dist;
+        }
+        System.out.println(solve(adj));
+        cin.close();
     }
 
     
