@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.*;
-public class TravellingSalesman {
+public class JasonTravellingSalesman {
 
     public static int solve(int[][] adj) {
         int min = Integer.MAX_VALUE;
