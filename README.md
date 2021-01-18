@@ -32,6 +32,7 @@ Travelling Salesman solution, Mr. K 2021
 - After Jason made optimizations, he compared the time it took to run both solutions
 - Ivan's took an astounding 0.048 sec on his computer, and Jason's took 0.014 sec
 - Jason typed too fast in excitement and managed to break his code without noticing, pushing his broken code to github
+- Jason Fixed it lolololol :DD
 
 TODO
 # Explanation of our solution:
