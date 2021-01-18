@@ -1,4 +1,4 @@
-public class myLinkedList<e>{
+public class myLinkedList<e>{ // type casting could potetnially be slowing down the solution
     // use my own linked list to get access to the instance variables + edit the node class
     private class Node{
       public Node(e value){
@@ -206,16 +206,19 @@ public class myLinkedList<e>{
     }
   
 
-    // new function
-    public void substringReverse(int index){ 
+    // new function => also wil return sum
+    public int substringReverse(int index){ 
         // index = steps from end
         // index E [length - 1, 1]
         Node hold = end;
+        int sum = 0;
         for (int i = 0; i <= index; i++){
+            sum += (int)hold.getData();
             Node temp = hold.getNext();
             hold.setNext(hold.getPrev());
             hold.setPrev(temp);
             hold = hold.getNext();
+            
         }
         
         end.setPrev(hold);
@@ -223,12 +226,13 @@ public class myLinkedList<e>{
             Node temp = start;
             start = end;
             end = temp;
-            return;
+            return sum;
         }
         Node temp = hold.getNext();
         hold.setNext(end);
         end = temp;
         end.setNext(null);
+        return sum;
     }
 
 }

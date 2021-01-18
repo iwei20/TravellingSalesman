@@ -13,8 +13,10 @@ public class TravellingSalesman {
         }
         // one ele larger than we need
         int[] repeatNTimes = new int[adj.length + 1];
-        ArrayList<String> allAnswers = new ArrayList<String>();
-        allAnswers.add(test.toString());
+
+        //remove later
+        // ArrayList<String> allAnswers = new ArrayList<String>(); 
+        // allAnswers.add(test.toString()); 
 
         
         for(int x = 0; x <= repeatNTimes.length; x++){
@@ -24,11 +26,11 @@ public class TravellingSalesman {
             
             repeatNTimes[x] += 1;
             if (repeatNTimes[x] < x+1){
-                test.substringReverse(x);
+                int sum= test.substringReverse(x);
                 // System.out.println(x);
                 // System.out.println(test);
-                allAnswers.add(test.toString());
-                int sum = test.sum(adj); // optimize to include with the reverse function n^3 => n^2
+                // allAnswers.add(test.toString()); // remove later
+                // int sum = test.sum(adj); // optimize to include with the reverse function n^3 => n^2
                 if(sum < min) {
                     min = sum;
                     // System.out.println(test.toString()); // delete later
