@@ -1,7 +1,8 @@
 import java.util.*;
 public class testingAlgorithm{
     public static void main(String[] args) {
-        String[] eles = new String[]{"A", "B", "C", "D", "E", "F", "G", "H"};
+        String[] eles = new String[]{"A", "B", "C", "D"};
+        // , "E", "F", "G", "H"
         myLinkedList<String> test = new myLinkedList<String>();
         for (String i : eles){
             test.add(i);
@@ -32,6 +33,8 @@ public class testingAlgorithm{
 
         }
         System.out.println(allAnswers.size());
+        System.out.println(allAnswers);
+
         System.out.println(Arrays.toString(repeatNTimes));
     }
 
