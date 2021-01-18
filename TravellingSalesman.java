@@ -67,7 +67,9 @@ public class TravellingSalesman {
             int dist = Integer.parseInt(s[4]); 
             adj[first][second] = adj[second][first] = dist;
         }
+        long start = System.currentTimeMillis();
         System.out.println(solve(adj));
+        System.out.println((System.currentTimeMillis()-start)/1000.0);
         cin.close();
     }
 
