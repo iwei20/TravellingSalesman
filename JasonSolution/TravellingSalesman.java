@@ -5,7 +5,6 @@ public class TravellingSalesman {
 
     public static int solve(int[][] adj) {
         int min = Integer.MAX_VALUE;
-        // ArrayList<Integer> soln = new ArrayList<Integer>();
         // Consider every possible starting position
         myLinkedList<Integer> test = new myLinkedList<Integer>();
         for (Integer i = 0; i < adj.length; i++){
@@ -17,7 +16,7 @@ public class TravellingSalesman {
         //remove later
         // ArrayList<String> allAnswers = new ArrayList<String>(); 
         // allAnswers.add(test.toString()); 
-
+        // System.out.println(test.toString());
         
         for(int x = 0; x <= repeatNTimes.length; x++){
             if (x == repeatNTimes.length - 1){
@@ -26,15 +25,21 @@ public class TravellingSalesman {
             
             repeatNTimes[x] += 1;
             if (repeatNTimes[x] < x+1){
-                int sum= test.substringReverse(x);
+                test.substringReverse(x);
+
                 // System.out.println(x);
                 // System.out.println(test);
                 // allAnswers.add(test.toString()); // remove later
-                // int sum = test.sum(adj); // optimize to include with the reverse function n^3 => n^2
+
+                int sum = test.sum(adj); // optimize to include with the reverse function n^3 => n^2
                 if(sum < min) {
                     min = sum;
+                    // System.out.println(x);
+                    // System.out.println(min);
                     // System.out.println(test.toString()); // delete later
-                    // soln = first.fullPath();
+                    // System.exit(0);
+                    // [2, 6, 5, 3, 1, 7, 4, 0]
+                    // [1, 7, 4, 0, 3, 5, 6, 2] => 219 => 207
                 }
                 while(x > 0){
                     x --;
@@ -76,6 +81,11 @@ public class TravellingSalesman {
             int dist = Integer.parseInt(s[4]); 
             adj[first][second] = adj[second][first] = dist;
         }
+        // for (int[] i : adj){
+        //     System.out.println(Arrays.toString(i));
+        // }
+        
+        
         long start = System.currentTimeMillis();
         System.out.println(solve(adj));
         System.out.println((System.currentTimeMillis()-start)/1000.0);

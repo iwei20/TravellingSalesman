@@ -204,36 +204,34 @@ public class myLinkedList<e>{ // type casting could potetnially be slowing down 
       }
       return ans + "]";
     }
+    // sum += adj[(int)hold.getData()][(int)hold.getNext().getData()];
   
 
     // new function => also wil return sum
-    public int substringReverse(int index){ 
-        // index = steps from end
-        // index E [length - 1, 1]
-        Node hold = end;
-        int sum = 0;
-        for (int i = 0; i <= index; i++){
-            sum += (int)hold.getData();
-            Node temp = hold.getNext();
-            hold.setNext(hold.getPrev());
-            hold.setPrev(temp);
-            hold = hold.getNext();
-            
-        }
-        
-        end.setPrev(hold);
-        if (hold == null){
-            Node temp = start;
-            start = end;
-            end = temp;
-            return sum;
-        }
-        Node temp = hold.getNext();
-        hold.setNext(end);
-        end = temp;
-        end.setNext(null);
-        return sum;
-    }
+    public void substringReverse(int index){ 
+      // index = steps from end
+      // index E [length - 1, 1]
+      Node hold = end;
+      for (int i = 0; i <= index; i++){
+          Node temp = hold.getNext();
+          hold.setNext(hold.getPrev());
+          hold.setPrev(temp);
+          hold = hold.getNext();
+
+      }
+
+      end.setPrev(hold);
+      if (hold == null){
+          Node temp = start;
+          start = end;
+          end = temp;
+          return;
+      }
+      Node temp = hold.getNext();
+      hold.setNext(end);
+      end = temp;
+      end.setNext(null);
+  }
 
 }
   
