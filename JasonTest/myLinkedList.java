@@ -179,6 +179,17 @@ public class myLinkedList<e>{
       }
       return ans + "]";
     }
+
+    public int sum(int[][] adj){
+        Node current = start;
+        int finalSum = 0;
+        while(current.getNext() != null){
+            finalSum += adj[(int)current.getData()][(int)current.getNext().getData()];
+
+            current = current.getNext();
+        }
+        return finalSum;
+    }
     public String toStringReversed(){
 
 
