@@ -30,9 +30,8 @@ Travelling Salesman solution, Mr. K 2021
 - Jason continued to work on his solution that involved LinkedList and sublist reversals on his own branch
 - He coming up with a working implementation, getting the same solution as Ivan, 207
 - After Jason made optimizations, he compared the time it took to run both solutions
-- Ivan's took an astounding 0.048 sec on his computer, and Jason's took 0.014 sec
-- Jason typed too fast in excitement and managed to break his code without noticing, pushing his broken code to github
-- Jason Fixed it lolololol :DD
+- On Jason's computer: Ivan's solution took an astounding 0.048 sec on his computer, and Jason's took 0.014 sec
+
 
 TODO
 # Explanation of our solution:
