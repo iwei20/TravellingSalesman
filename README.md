@@ -31,7 +31,7 @@ Travelling Salesman solution, Mr. K 2021
 - He coming up with a working implementation, getting the same solution as Ivan, 207
 - After Jason made optimizations, he compared the time it took to run both solutions
 - On Jason's computer: Ivan's solution took an astounding 0.048 sec on his computer, and Jason's took 0.014 sec
-
+- Ivan stopped storing the path in his solution.  Now 0.012 on his computer, Jason's takes 0.007 for comparison.
 
 TODO
 # Explanation of our solution:
