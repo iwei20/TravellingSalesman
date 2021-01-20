@@ -1,5 +1,6 @@
 # TravellingSalesman
 Travelling Salesman solution, Mr. K 2021
+Ivan Wei, Jason Jiang, Hannah Scheuer, Hasin Raihan, Jerry Liang, Ivan Mijacka
 
 # Minutes:
 ## During class:
